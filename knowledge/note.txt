@@ -30,3 +30,9 @@ Maintenant on va utiliser une favicon
 IL FAUT FAIRE ATTENTION A L'ORDRE D'UTILISATION DES MIDDLEWARES
 ---------------------------------------------------------------------
 
+AJOUT D'UN POKEMON
+
+Methode de type POST
+Ajout de l'element à la collection : /api/pokemons
+Les donnees sous format JSON
+
