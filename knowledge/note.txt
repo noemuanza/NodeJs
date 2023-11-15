@@ -1,0 +1,32 @@
+MIDDLEWARES
+
+On a plusiesurs types de middlewares, important d'en etre conscient
+On a: 
+
+middleware d'application
+middleware du routeur
+middleware de traitement d'erreur
+middleware intégré
+middleware tiers
+
+Ne pas hésiter a se renseigner à ce sujet
+-----------------------------------------
+On utilise le paquet morgan--save-dev
+pour observer les URL demanés par l'utilisateur:
+
+Log du type : 
+GET /api/pokemons/1 200 4.322 ms - 247
+GET /api/pokemons/1 304 1.024 ms - -
+
+method :url :status :response-time ms - :res[content-length]
+
+Ici le code 200 signifie que la requete s'est deroulee sans prb
+et le cde 304 qu'il n'y a pas besoin de transmettre les donnees a nouveau
+
+Plus de details sur https://www.npmjs.com/package/morgan
+------------------------------------------
+Maintenant on va utiliser une favicon
+------------------------------------------
+IL FAUT FAIRE ATTENTION A L'ORDRE D'UTILISATION DES MIDDLEWARES
+---------------------------------------------------------------------
+

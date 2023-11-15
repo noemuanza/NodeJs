@@ -1,10 +1,26 @@
 const express = require('express');
+const morgan = require('morgan');
+const favicon = require('serve-favicon');
 const {success} = require('./helper.js');
 let pokemons = require('./mock-pokemon.js');
 
 const app = express();
 const port = 3000;
 
+
+//creating a middleware to log the url
+/*$app.use((req, res, next) => {
+    console.log(`URL: ${req.url}`);
+    next();
+});*/
+
+//using already made middleware morgan to log the url
+app
+    .use(favicon(__dirname + '/favicon.ico'))
+    .use(morgan('dev'));
+    
+
+//endpoint for the root
 app.get('/', (req, res) => res.send('Hello Express 2!'));
 
 //endpoint for a pokemon name from the url
