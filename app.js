@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const favicon = require('serve-favicon');
-const {success} = require('./helper.js');
+const {success,getUniqueId} = require('./helper.js');
 let pokemons = require('./mock-pokemon.js');
 
 const app = express();
@@ -23,6 +23,15 @@ app
 //endpoint for the root
 app.get('/', (req, res) => res.send('Hello Express 2!'));
 
+
+
+//endpoint to display the total number of pokemons
+app.get('/api/pokemons', (req, res) => {
+    const message = "Here we got all the pokemons";
+    res.json(success(message,pokemons));
+});
+
+
 //endpoint for a pokemon name from the url
 app.get('/api/pokemons/:id', (req, res) => {
     const urlId = parseInt(req.params.id,10);
@@ -31,10 +40,19 @@ app.get('/api/pokemons/:id', (req, res) => {
     res.json(success(message,pokemon));
 });
 
-//endpoint to display the total number of pokemons
-app.get('/api/pokemons', (req, res) => {
-    const message = "Here we got all the pokemons";
-    res.json(success(message,pokemons));
+app.post('/api/pokemons', (req, res) => {
+    const id = getUniqueId(pokemons);
+    const createdPokemon = {
+        //we put the body of the request in the createdPokemon object
+        ...req.body,
+        ...{
+            id: id, 
+            created: new Date()
+        }
+    }
+    pokemons.push(createdPokemon);
+    const message = `The pokemon ${createdPokemon.name} has been created with success`;
+    res.json(success(message, createdPokemon));
 });
 
 

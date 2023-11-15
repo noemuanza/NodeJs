@@ -36,3 +36,11 @@ Methode de type POST
 Ajout de l'element à la collection : /api/pokemons
 Les donnees sous format JSON
 
+------------------------------------------
+On a donc crée un endpoint avec la methode post qui permet d'ajouter un pokemons
+en utilisant le spread operator on met le body et un id et la date dans un seul element
+ensuite on envoie une reponse JSON
+------------------------------------------
+Mais pour tester la methode post on va avoir besoin d'aide donc -------> On a Insomnia(mieux pr dev solo) ou Postman(mieux pour les entreprises) de disponible
+Prochaine étape get started on Insomnia.
+------------------------------------------
