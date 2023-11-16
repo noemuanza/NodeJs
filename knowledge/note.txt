@@ -62,5 +62,17 @@ attention a la syntaxe avec les spread operateurs
 
 On ne repasse pas dans la requete l'id et la date car on ne veut pas les modifier.
 
+---------------------------------------------------------------------
+
+SUPPRESSION D'UN POKEMON
+
+requete DELETE/ --> supprimer une donnée à partir de l'id
+
+Oklm
+
+---------------------------------------------------------------------
+
+
+
 
 

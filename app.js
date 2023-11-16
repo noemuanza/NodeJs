@@ -69,6 +69,18 @@ app.put('/api/pokemons/:id', (req, res) => {
     res.json(success(message, updatedPokemon));
 });
 
+
+//endpoint to delete a pokemon
+app.delete('/api/pokemons/:id', (req, res) => {
+    const urlId = parseInt(req.params.id);
+    pokemons = pokemons.filter(pokemon => pokemon.id !== urlId);
+    const message = `The pokemon with the id ${urlId} has been deleted with success`;
+    res.json(success(message, pokemons));
+});
+
+
+
+
 app.listen(port, () => console.log(`App runnin on : http://localhost:${port}!`));
 
 
