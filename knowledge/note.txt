@@ -1,7 +1,7 @@
 MIDDLEWARES
 
 On a plusiesurs types de middlewares, important d'en etre conscient
-On a: 
+On a:
 
 middleware d'application
 middleware du routeur
@@ -14,7 +14,7 @@ Ne pas hésiter a se renseigner à ce sujet
 On utilise le paquet morgan--save-dev
 pour observer les URL demanés par l'utilisateur:
 
-Log du type : 
+Log du type :
 GET /api/pokemons/1 200 4.322 ms - 247
 GET /api/pokemons/1 304 1.024 ms - -
 
@@ -44,3 +44,23 @@ ensuite on envoie une reponse JSON
 Mais pour tester la methode post on va avoir besoin d'aide donc -------> On a Insomnia(mieux pr dev solo) ou Postman(mieux pour les entreprises) de disponible
 Prochaine étape get started on Insomnia.
 ------------------------------------------
+Gros probleme , lors de la requete post on ne reçoit pas le nom et la data du pokemon enregistré, cela semble etre
+a cause du fait que l'on recoive un string et non un format json.
+Go utiliser middleware.
+------------------------------------------
+en utilisant JSON.parse(string) on peut parser une string en json
+a l'inverse, JSON.stringify(Json) permet de stringifier un json
+------------------------------------------
+middleware "body-parser"
+---------------------------------------------------------------------
+
+MODIFICATION d'un pokemon
+
+requete http PUT/ --> remplacer une donnée par une ajouter
+
+attention a la syntaxe avec les spread operateurs
+
+On ne repasse pas dans la requete l'id et la date car on ne veut pas les modifier.
+
+
+
